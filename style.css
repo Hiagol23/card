@@ -1,42 +1,83 @@
-:root{
-    --cor-hover: #fff;
-}
-
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
-ul, ol, li {
-    list-style: none;
-}
-a{
-    text-decoration: none;
-    color: inherit;
-}
-nav{
-    background-color: cadetblue;
-}
-
-.menu {
-    background-color: black;
-    color: white;
+body {
     display: flex;
-    justify-content: end;
-    gap: 16px;
-    padding: 16px;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('./porto-de-galinhas-pe.webp'); /* Substitua pelo nome do seu arquivo */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
 }
 
-.menu a {
-    padding: 8px;
-    transition: .5s;
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
-.menu a:hover{
-    background-color: var(--cor-hover);
+.card {
+    width: 250px; 
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
 }
 
-.menu img{
-    height: 16px;
+.card img {
+    width: 100%;
+    height: 150px; 
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 10px;
+    text-align: center;
+}
+
+.card h2 {
+    font-size: 18px;
+}
+
+.card p {
+    font-size: 14px;
+}
+
+.card button {
+    padding: 8px 12px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.acao {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    margin-top: auto;  
+    padding: 10px;
+    border-top: 1px solid #ddd;
+}
+
+.likes {
+    font-weight: bold;
+    color: #ff5733;
+}
+
+h3{
+    align-items: center;
+    text-align: center;
 }

@@ -1,30 +1,39 @@
-'use strict'
+"use strict";
 
 const disciplinas = [
-    {nome:'PWDE', cor: 'red', icon: 'pwbe.png'},
-    {nome:'PWFE', cor: 'pink', icon: 'pwfe.png'},
-    {nome:'PPDM', cor: 'blue', icon: 'ppdm.png'},
-    {nome:'PRO', cor: 'white', icon: 'pro.png'}
-]
+    { nome: "PWBE", cor: "yellow", icon: "pwbe.png" },
+    { nome: "PWFE", cor: "red", icon: "pwfe.png" },
+    { nome: "PPDM", cor: "blue", icon: "ppdm.png" },
+    { nome: "PRO", cor: "pink", icon: "pro.png" },
+    { nome: "SOP", cor: "green", icon: "sop.png" }
+];
 
-function criarItemMenu (disciplina) {
-    const listaMenu = document.getElementById('menu')
-    const novoItem = document.createElement('li')
-    const novoLink = document.createElement('a')
-    const novoImagem = document.createElement('img')
-
-    novoLink.href = '#'
-    novoLink.textContent = disciplina.nome
-    novoLink.style = `--cor-hover: ${disciplina.cor}`
-
-
-    novoImagem.src = `./icon/${disciplina.icon}`
-
-    novoItem.appendChild(novoImagem)
-    novoItem.appendChild(novoLink)
-
-    listaMenu.appendChild(novoItem)
-
+function criarCard(disciplina) {
+    const cardsContainer = document.getElementById("cards-container");
+    const card = document.createElement("div");
+    card.classList.add("container");
+    card.style.borderColor = disciplina.cor;
+    
+    const imagem = document.createElement("img");
+    imagem.src = disciplina.icon || "https://via.placeholder.com/300";
+    imagem.alt = `Ícone de ${disciplina.nome}`;
+    
+    const titulo = document.createElement("h2");
+    titulo.textContent = disciplina.nome;
+    
+    const descricao = document.createElement("p");
+    descricao.textContent = "Descrição breve sobre " + disciplina.nome;
+    
+    const botao = document.createElement("button");
+    botao.textContent = "Clique aqui";
+    botao.style.backgroundColor = disciplina.cor;
+    
+    card.appendChild(imagem);
+    card.appendChild(titulo);
+    card.appendChild(descricao);
+    card.appendChild(botao);
+    
+    cardsContainer.appendChild(card);
 }
 
-disciplinas.forEach(criarItemMenu)
+disciplinas.forEach(criarCard);
